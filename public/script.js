@@ -24,7 +24,9 @@ var getGame = function() {
                 leftPos += boxSize;
             }
 
-            topPos -= boxSize;
+            if ( sqId !== 1 ) {
+                topPos -= boxSize;
+            }
 
             $('<div id="'+sqId+'" class="square" data-name="'+sqName+'"></div>').css({
                 top: topPos+"px",
