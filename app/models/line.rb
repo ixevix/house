@@ -1,6 +1,7 @@
 class Line < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :game_instance
+  fields do
+    name :string
+  end
   has_and_belongs_to_many :squares
 
   attr_accessible :name

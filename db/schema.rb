@@ -11,16 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229053151) do
+ActiveRecord::Schema.define(:version => 20121229111253) do
 
-  create_table "lines", :force => true do |t|
-    t.string  "name"
+  create_table "claims", :force => true do |t|
     t.integer "user_id"
     t.integer "game_instance_id"
+    t.integer "line_id"
   end
 
-  add_index "lines", ["game_instance_id"], :name => "index_lines_on_game_instance_id"
-  add_index "lines", ["user_id"], :name => "index_lines_on_user_id"
+  add_index "claims", ["game_instance_id"], :name => "index_claims_on_game_instance_id"
+  add_index "claims", ["line_id"], :name => "index_claims_on_line_id"
+  add_index "claims", ["user_id"], :name => "index_claims_on_user_id"
+
+  create_table "game_instances", :force => true do |t|
+  end
+
+  create_table "lines", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "lines_squares", :id => false, :force => true do |t|
     t.integer "line_id"

@@ -1,4 +1,10 @@
 House::Application.routes.draw do
+  resources :claims
+
+
+  resources :game_instances
+
+
   resources :squares
 
 
