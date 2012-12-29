@@ -10,8 +10,9 @@ var hilightLine = function(actLine, squareId) {
 
 var getGame = function() {
     $.getJSON("/squares", function(data) {
+        sessionStorage();
         $.each(data, function() {
-            console.log(this);
+
         });
     });
 };
