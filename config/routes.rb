@@ -1,4 +1,7 @@
 House::Application.routes.draw do
+  resources :squares
+
+
   resources :lines
 
 

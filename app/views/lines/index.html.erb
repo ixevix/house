@@ -9,6 +9,7 @@
 
 <% @lines.each do |line| %>
   <tr>
+    <td><%= line.id %></td>
     <td><%= line.name %></td>
     <td><%= link_to 'Show', line %></td>
     <td><%= link_to 'Edit', edit_line_path(line) %></td>
