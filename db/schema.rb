@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229124311) do
+ActiveRecord::Schema.define(:version => 20121229124443) do
 
   create_table "claims", :force => true do |t|
     t.integer  "user_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20121229124311) do
   add_index "claims", ["user_id"], :name => "index_claims_on_user_id"
 
   create_table "game_instances", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "lines", :force => true do |t|
