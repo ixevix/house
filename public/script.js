@@ -15,7 +15,7 @@ var getGame = function() {
         var leftPos = 0;
         var boxHeight = 53;
 
-        $.each(data, function() {
+        $.each(data.squares, function() {
             console.log(this);
             var sqName = this.name;
             var sqId = this.id;
