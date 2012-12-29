@@ -39,4 +39,5 @@ gem 'jquery-rails'
 gem 'devise'
 group :development do
   gem 'sqlite3'
+  gem 'hobo_fields', :git => 'https://github.com/tablatom/hobo.git'
 end

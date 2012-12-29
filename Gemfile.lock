@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/tablatom/hobo.git
+  revision: dbde28b29545d5b9f0593883df5ca06f76a94d23
+  specs:
+    hobo_fields (2.0.0.pre7)
+      hobo_support (= 2.0.0.pre7)
+    hobo_support (2.0.0.pre7)
+      rails (~> 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -116,6 +125,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
+  hobo_fields!
   jquery-rails
   pg
   rails (= 3.2.9)
