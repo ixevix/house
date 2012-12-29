@@ -2,14 +2,17 @@ var $square;
 var $body;
 
 var hilightLine = function(actLine, squareId) {
-
-    $("#"+squareId).css("border", "none").css(actLine, "3px solid black");
-    console.log(squareId);
+    $("#"+squareId).css("border", "3px solid rgba(0,0,0,0)");
+    if(actLine !== undefined) {
+        $("#"+squareId).css(actLine, "3px solid #000");
+    }
 };
 
 $(function() {
     $square = $(".square");
     $body = $("body");
+
+
 
     $body.mouseup(function() {
         $square.stop(true, true).transition({
@@ -20,7 +23,7 @@ $(function() {
 
     $square.mousedown(function(e) {
         $(this).stop(true, true).transition({
-            scale: 1.3
+            scale: 1.5
         }, 100);
 
         var squareId = $(this).prop("id");
@@ -38,14 +41,14 @@ $(function() {
             var actLine;
 
             if ( aX > aY ) {
-                if ( dmX >= 0 ) {
+                if ( dmX >= 40 ) {
                     actLine = "border-right";
-                } else {
+                } else if (dmX <= -40) {
                     actLine = "border-left";
                 }
-            } else if ( dmY >= 0 ) {
+            } else if ( dmY >= 40 ) {
                 actLine = "border-top";
-            } else {
+            } else if (dmY <= -40) {
                 actLine = "border-bottom";
             }
 
