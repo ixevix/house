@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229035805) do
+ActiveRecord::Schema.define(:version => 20121229043000) do
+
+  create_table "lines", :force => true do |t|
+    t.string  "name"
+    t.integer "user_id"
+    t.integer "game_instance_id"
+  end
+
+  add_index "lines", ["game_instance_id"], :name => "index_lines_on_game_instance_id"
+  add_index "lines", ["user_id"], :name => "index_lines_on_user_id"
+
+  create_table "squares", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -5,4 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-lines = Line.create([ name: ''])
+lines = Line.create([
+   { name: 'L0001'},
+   { name: 'L0002'},
+   { name: 'L0003'},
+   { name: 'L0004'},
+   { name: 'L0005'},
+   { name: 'L0006'},
+   { name: 'L0007'},
+   { name: 'L0008'},
+   { name: 'L0009'},
+   { name: 'L0010'}
+  ])
