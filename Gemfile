@@ -36,3 +36,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+gem 'devise'
+group :development do
+  gem 'sqlite3'
+end
