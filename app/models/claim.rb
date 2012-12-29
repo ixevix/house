@@ -1,5 +1,6 @@
 class Claim < ActiveRecord::Base
   fields do
+    timestamps
   end
   belongs_to :user
   belongs_to :game_instance
