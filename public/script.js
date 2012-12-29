@@ -1,4 +1,3 @@
-var $square;
 var $body;
 
 var hilightLine = function(actLine, squareId) {
@@ -33,7 +32,6 @@ var getGame = function() {
             })
             .appendTo("#outerBounds");
         });
-        $square = $(".square");
     });
 };
 
@@ -43,13 +41,13 @@ $(function() {
     getGame();
 
     $body.mouseup(function() {
-        $square.stop(true, true).transition({
+        $(".square").stop(true, true).transition({
             scale: 1
         }, 100);
         $body.off("mousemove.square");
     });
 
-    $square.live("mousedown", function(e) {
+    $(".square").live("mousedown", function(e) {
         $(this).stop(true, true).transition({
             scale: 1.5
         }, 100);
