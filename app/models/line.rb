@@ -1,6 +1,8 @@
 class Line < ActiveRecord::Base
-  fields do
-    name :string
+  if Rails.env == "development"
+    fields do
+      name :string
+    end
   end
   has_and_belongs_to_many :squares
 
