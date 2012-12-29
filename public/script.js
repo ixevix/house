@@ -49,7 +49,7 @@ $(function() {
         $body.off("mousemove.square");
     });
 
-    $square.on("mousedown.square", function(e) {
+    $square.live("mousedown", function(e) {
         $(this).stop(true, true).transition({
             scale: 1.5
         }, 100);
