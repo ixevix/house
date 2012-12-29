@@ -11,9 +11,9 @@ var hilightLine = function(actLine, squareId) {
 var getGame = function() {
     $.getJSON("/game_instances/1", function(data) {
         console.log(data);
-        var topPos = 583;
+        var topPos = 530;
         var leftPos = 0;
-        var boxHeight = 53;
+        var boxSize = 53;
 
         $.each(data.squares, function() {
             console.log(this);
@@ -21,21 +21,23 @@ var getGame = function() {
             var sqId = this.id;
 
             if ( (sqId + 1) % 10 === 1 ) {
-                topPos = 583;
+                topPos = 530;
+                leftPos += boxSize;
             }
 
-            topPos -= boxHeight;
+            topPos -= boxSize;
 
             $('<div id="'+sqId+'" class="square" data-name="'+sqName+'"></div>').css({
-                top: topPos+"px"
+                top: topPos+"px",
+                left: leftPos+"px"
             })
             .appendTo("#outerBounds");
         });
+        $square = $(".square");
     });
 };
 
 $(function() {
-    $square = $(".square");
     $body = $("body");
 
     getGame();
@@ -47,7 +49,7 @@ $(function() {
         $body.off("mousemove.square");
     });
 
-    $square.mousedown(function(e) {
+    $square.on("mousedown.square", function(e) {
         $(this).stop(true, true).transition({
             scale: 1.5
         }, 100);
@@ -84,6 +86,4 @@ $(function() {
         });
 
     });
-
-
 });
