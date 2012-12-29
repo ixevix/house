@@ -10,7 +10,6 @@ var hilightLine = function(actLine, squareId) {
 
 var getGame = function() {
     $.getJSON("/game_instances/1", function(data) {
-        sessionStorage(data.id, data);
 
         var topPos = 0;
         var leftPos = 0;
