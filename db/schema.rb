@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229111253) do
+ActiveRecord::Schema.define(:version => 20121229113753) do
 
   create_table "claims", :force => true do |t|
     t.integer "user_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20121229111253) do
 
   add_index "claims", ["game_instance_id"], :name => "index_claims_on_game_instance_id"
   add_index "claims", ["line_id"], :name => "index_claims_on_line_id"
+  add_index "claims", ["user_id", "game_instance_id"], :name => "index_claims_on_user_id_and_game_instance_id", :unique => true
   add_index "claims", ["user_id"], :name => "index_claims_on_user_id"
 
   create_table "game_instances", :force => true do |t|
