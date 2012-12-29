@@ -10,8 +10,8 @@ var hilightLine = function(actLine, squareId) {
 
 var getGame = function() {
     $.getJSON("/game_instances/1", function(data) {
-
-        var topPos = 0;
+        console.log(data);
+        var topPos = 583;
         var leftPos = 0;
         var boxHeight = 53;
 
