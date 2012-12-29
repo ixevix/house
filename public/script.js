@@ -32,6 +32,44 @@ var getGame = function() {
             })
             .appendTo("#outerBounds");
         });
+
+        $("#outerBounds").find("div").mousedown(function(e) {
+            $(this).stop(true, true).transition({
+                scale: 1.5
+            }, 100);
+
+            var squareId = $(this).prop("id");
+
+            var mX = e.pageX;
+            var mY = e.pageY;
+
+            $body.on("mousemove.square", function(e) {
+                var dmX = e.pageX - mX;
+                var dmY = mY - e.pageY;
+
+                var aX = Math.abs(dmX);
+                var aY = Math.abs(dmY);
+
+                var actLine;
+
+                if ( aX > aY ) {
+                    if ( dmX >= 40 ) {
+                        actLine = "border-right";
+                    } else if (dmX <= -40) {
+                        actLine = "border-left";
+                    }
+                } else if ( dmY >= 40 ) {
+                    actLine = "border-top";
+                } else if (dmY <= -40) {
+                    actLine = "border-bottom";
+                }
+
+                hilightLine(actLine, squareId);
+
+                $("#console").text(actLine);
+            });
+
+        });
     });
 };
 
@@ -47,41 +85,5 @@ $(function() {
         $body.off("mousemove.square");
     });
 
-    $(".square").live("mousedown", function(e) {
-        $(this).stop(true, true).transition({
-            scale: 1.5
-        }, 100);
 
-        var squareId = $(this).prop("id");
-
-        var mX = e.pageX;
-        var mY = e.pageY;
-
-        $body.on("mousemove.square", function(e) {
-            var dmX = e.pageX - mX;
-            var dmY = mY - e.pageY;
-
-            var aX = Math.abs(dmX);
-            var aY = Math.abs(dmY);
-
-            var actLine;
-
-            if ( aX > aY ) {
-                if ( dmX >= 40 ) {
-                    actLine = "border-right";
-                } else if (dmX <= -40) {
-                    actLine = "border-left";
-                }
-            } else if ( dmY >= 40 ) {
-                actLine = "border-top";
-            } else if (dmY <= -40) {
-                actLine = "border-bottom";
-            }
-
-            hilightLine(actLine, squareId);
-
-            $("#console").text(actLine);
-        });
-
-    });
 });
