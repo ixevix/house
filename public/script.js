@@ -9,10 +9,27 @@ var hilightLine = function(actLine, squareId) {
 };
 
 var getGame = function() {
-    $.getJSON("/squares", function(data) {
-        sessionStorage();
-        $.each(data, function() {
+    $.getJSON("/game_instances/1", function(data) {
+        sessionStorage(data.id, data);
 
+        var topPos = 0;
+        var leftPos = 0;
+        var boxHeight = 53;
+
+        $.each(data, function() {
+            var sqName = this.name;
+            var sqId = this.id;
+
+            if ( (sqId + 1) % 10 === 1 ) {
+                topPos = 583;
+            }
+
+            topPos -= boxHeight;
+
+            $('<div id="'+sqId+'" class="square" data-name="'+sqName+'"></div>').css({
+                top: topPos+"px"
+            })
+            .appendTo("#outerBounds");
         });
     });
 };
