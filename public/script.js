@@ -19,14 +19,12 @@ var getGame = function() {
             var sqName = this.name;
             var sqId = this.id;
 
-            if ( (sqId + 1) % 10 === 1 ) {
+            if ( sqId % 10 === 1 && sqId !== 1 ) {
                 topPos = 530;
                 leftPos += boxSize;
             }
 
-            if ( sqId !== 1 ) {
-                topPos -= boxSize;
-            }
+            topPos -= boxSize;
 
             $('<div id="'+sqId+'" class="square" data-name="'+sqName+'"></div>').css({
                 top: topPos+"px",
