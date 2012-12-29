@@ -95,23 +95,26 @@ header {
 }
 header h1 {
     font-size: 68px;
-    padding: 30px 30px 60px 30px;
+    padding: 30px 0 60px 0;
     text-align: center;
-    width: 100%;
+    width: 450px;
+    margin: auto;
     display: block;
     text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
 }
 nav ul {
-    width: 180px;
-    margin: auto;
+    width: 500px;
     position: relative;
+    left: 50%;
+    margin-left: -225px;
     top: -20px;
+    display: block;
 }
 nav ul li {
     width: 150px;
     height: 40px;
-    float: left;
     margin: 5px;
+    float: left;
     background: #b93c00;
     box-shadow: 0 0 8px rgba(0,0,0,0.8);
     border-radius: 5px;
@@ -141,12 +144,16 @@ li a {
     margin: 50px 0 0 0;
 }
 #outerBounds {
-    width: 560px;
-    height: 560px;
+    width: 600px;
+    height: 600px;
     position: absolute;
-    top: 50%;
+    top: 100px;
     left: 50%;
-    margin: -280px 0 0 -280px;
+    margin: 0 0 0 -300px;
+    background: rgb(240,240,240);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
 }
 .square {
     position: absolute;
@@ -155,4 +162,5 @@ li a {
     border: 3px solid rgba(0,0,0,0);
     color: rgb(0, 72, 128);
     background: rgb(193, 229, 255);
+    z-index: 10;
 }

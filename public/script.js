@@ -12,7 +12,7 @@ var getGame = function() {
         console.log(data);
         var topPos = 530;
         var leftPos = 0;
-        var boxSize = 53;
+        var boxSize = 56;
 
         $.each(data.squares, function() {
             console.log(this);
@@ -34,9 +34,10 @@ var getGame = function() {
         });
 
         $("#outerBounds").find("div").mousedown(function(e) {
-            $(this).stop(true, true).transition({
-                scale: 1.5
-            }, 100);
+            $(this).stop(true, true).animation({
+                scale: 1.3,
+                "z-index": 100
+            }, 100).css("box-shadow", "0 0 10px rgba(0,0,0,0.8)");
 
             var squareId = $(this).prop("id");
 
@@ -79,9 +80,10 @@ $(function() {
     getGame();
 
     $body.mouseup(function() {
-        $(".square").stop(true, true).transition({
-            scale: 1
-        }, 100);
+        $(".square").stop(true, true).animate({
+            scale: 1,
+            "z-index": 10;
+        }, 100).css("box-shadow", "none");
         $body.off("mousemove.square");
     });
 
