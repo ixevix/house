@@ -109,14 +109,12 @@ header h1 {
     top: 50%;
     left: 50%;
     margin: -280px 0 0 -280px;
-    background: rgb(240,240,240);
 }
 .square {
     position: absolute;
     width: 50px;
     height: 50px;
-    border: 3px solid rgb(118, 250, 255);
-    background: rgb(70, 169, 228);
+    background: rgb(193, 229, 255);
     bottom: 250px;
     right: 250px;
 }
