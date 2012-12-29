@@ -4,15 +4,23 @@ var $body;
 var hilightLine = function(actLine, squareId) {
     $("#"+squareId).css("border", "3px solid rgba(0,0,0,0)");
     if(actLine !== undefined) {
-        $("#"+squareId).css(actLine, "3px solid #000");
+        $("#"+squareId).css(actLine, "3px solid rgb(0, 72, 128)");
     }
+};
+
+var getGame = function() {
+    $.getJSON("/squares", function(data) {
+        $.each(data, function() {
+            console.log(this);
+        });
+    });
 };
 
 $(function() {
     $square = $(".square");
     $body = $("body");
 
-
+    getGame();
 
     $body.mouseup(function() {
         $square.stop(true, true).transition({
