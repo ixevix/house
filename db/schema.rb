@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229043000) do
+ActiveRecord::Schema.define(:version => 20121229053151) do
 
   create_table "lines", :force => true do |t|
     t.string  "name"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(:version => 20121229043000) do
 
   add_index "lines", ["game_instance_id"], :name => "index_lines_on_game_instance_id"
   add_index "lines", ["user_id"], :name => "index_lines_on_user_id"
+
+  create_table "lines_squares", :id => false, :force => true do |t|
+    t.integer "line_id"
+    t.integer "square_id"
+  end
 
   create_table "squares", :force => true do |t|
     t.string "name"
