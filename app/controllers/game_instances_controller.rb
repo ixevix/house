@@ -17,7 +17,7 @@ class GameInstancesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @game_instance }
+      format.json { render :json =>  @game_instance.to_json(:include => { :squares => { :include => :lines }} ) }
     end
   end
 

@@ -7,4 +7,9 @@ class GameInstance < ActiveRecord::Base
 
   has_many :lines
   has_many :squares
+
+  def squares
+    Square.all
+  end
+
 end
