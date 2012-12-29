@@ -41,8 +41,7 @@ class GameInstancesController < ApplicationController
   # POST /game_instances.json
   def create
     @game_instance = GameInstance.new(params[:game_instance])
-    @game_instance.lines << Line.all
-    @game_instance.squares << Square.all
+
     respond_to do |format|
       if @game_instance.save
         format.html { redirect_to @game_instance, notice: 'Game instance was successfully created.' }
