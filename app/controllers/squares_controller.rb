@@ -6,7 +6,7 @@ class SquaresController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @squares }
+      format.json { render :json => @squares.to_json(:include => :lines) }
     end
   end
 
