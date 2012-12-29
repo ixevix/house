@@ -1,4 +1,7 @@
 House::Application.routes.draw do
+  resources :lines
+
+
   devise_for :users
 
   root :to => "front#index"
