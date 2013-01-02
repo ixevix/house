@@ -1,8 +1,6 @@
 class Claim < ActiveRecord::Base
-  if Rails.env == "development"
-    fields do
-      timestamps
-    end
+  fields do
+    timestamps
   end
 
   belongs_to :user
