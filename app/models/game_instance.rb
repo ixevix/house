@@ -1,8 +1,6 @@
 class GameInstance < ActiveRecord::Base
-  if Rails.env == "development"
-    fields do
-      timestamps
-    end
+  fields do
+    timestamps
   end
 
   has_many :lines
