@@ -1,8 +1,7 @@
 class Square < ActiveRecord::Base
-  if Rails.env == "development"
-    fields do
-      name :string
-    end
+
+  fields do
+    name :string
   end
 
   has_many :lines
