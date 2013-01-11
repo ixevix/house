@@ -7,7 +7,7 @@ class GameInstance < ActiveRecord::Base
   has_many :squares
 
   def squares
-    Square.all
+    Square.includes(:lines).all
   end
 
 end
